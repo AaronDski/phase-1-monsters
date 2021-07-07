@@ -1,14 +1,21 @@
 const monsterUrl = 'http://localhost:3000/monsters';
 
-funtion getFetch(){
-    fetch('http://localhost:3000/monsters')
+let cachedJSON = {};
+
+getFetch()
+
+
+function getFetch(){
+    fetch('http://localhost:3000/monsters/?_limit50')
     .then(response => response.json())
-    .then(json => console.log(json))
-    pageload()
+    .then(json => pageLoad(json))
 }
 
 
-funtion pageLoad(){
+function pageLoad(nameInfo){
+    console.log(nameInfo)
+    document.querySelector("#monster-container").textContent = nameInfo.Object.keys()
+
 
 
 }
